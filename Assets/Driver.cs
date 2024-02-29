@@ -17,8 +17,8 @@ public class Driver : MonoBehaviour
     void Update()
     {
         // precisa calcular cada frame, então a varíavel precisa estar dentro do update
-        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed;
-        float velocity = Input.GetAxis("Vertical") * moveSpeed;
+        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
+        float velocity = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, velocity, 0);
     }
